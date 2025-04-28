@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lewis Hamilton | İletişim</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FAF6E9 !important;
+            padding-bottom: 50px !important;
+        }
+
+        main section {
+            background-color: #F5F0E1 !important;
+        }
+
+        header {
+            background-color: #4B0000 !important; 
+        }
+        
+        .hero {
+            background-color: #4B0000 !important; 
+            background-image: linear-gradient(rgba(75, 0, 0, 0.7), rgba(75, 0, 0, 0.8)), url('images/hero.jpg') !important;
+        }
+
+        .hero h1, .hero p {
+            color: #FAF6E9 !important;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        h2 {
+            color: #4B0000 !important;
+            border-bottom-color: #4B0000 !important;
+        }
+
+        a {
+            color: #4B0000 !important;
+        }
+
+        .menu a {
+            color: #FAF6E9 !important;
+        }
+
+        .menu a:hover, .menu a.active {
+            background-color: #6B0000 !important;
+            color: #FAF6E9 !important;
+        }
+
+        input, textarea {
+            background-color: #FAF6E9 !important;
+            border: 1px solid #4B0000 !important;
+        }
+
+        .submit-btn {
+            background-color: #4B0000 !important;
+            color: #FAF6E9 !important;
+            font-weight: bold !important;
+        }
+
+        .submit-btn:hover {
+            background-color: #6B0000 !important;
+        }
+
+        .social-links a {
+            color: #4B0000 !important;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #6B0000 !important;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #4B0000 !important;
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            padding: 10px 0 !important;
+            z-index: 100 !important;
+        }
+
+        footer p {
+            color: #FAF6E9 !important;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="gallery.html">Galeri</a></li>
+                <li><a href="contact.html" class="active">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>İletişim</h1>
+        <p>Bizimle iletişime geçin</p>
+    </div>
+
+    <main>
+        <section class="contact">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Bize Ulaşın</h2>
+                    <p>Lewis Hamilton hakkında daha fazla bilgi edinmek veya hayran kulübüne katılmak isterseniz aşağıdaki formdan bize ulaşabilirsiniz.</p>
+                    <p>Ayrıca Lewis Hamilton'ı sosyal medyada takip edebilirsiniz:</p>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/lewishamilton/" target="_blank">Instagram</a></li>
+                        <li><a href="https://twitter.com/LewisHamilton" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/LewisHamilton/" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>İletişim Formu</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Adınız</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Lewis Hamilton Fan Sitesi. Bu site öğrenci projesi olarak hazırlanmıştır.</p>
+    </footer>
+</body>
+</html> 

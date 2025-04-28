@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lewis Hamilton | Galeri</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FAF6E9 !important;
+            padding-bottom: 50px !important;
+        }
+
+        main section {
+            background-color: #F5F0E1 !important;
+        }
+
+        .gallery-item p {
+            background-color: rgba(75, 0, 0, 0.8);
+        }
+
+        header {
+            background-color: #4B0000 !important; 
+        }
+        
+        .hero {
+            background-color: #4B0000 !important; 
+            background-image: linear-gradient(rgba(75, 0, 0, 0.7), rgba(75, 0, 0, 0.8)), url('images/hero.jpg') !important;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 70%;
+            max-height: 70%;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            padding: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            margin: 0;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .hero h1, .hero p {
+            color: #FAF6E9 !important;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        h2 {
+            color: #4B0000 !important;
+            border-bottom-color: #4B0000 !important;
+        }
+
+        a {
+            color: #4B0000 !important;
+        }
+
+        .menu a {
+            color: #FAF6E9 !important;
+        }
+
+        .menu a:hover, .menu a.active {
+            background-color: #6B0000 !important;
+            color: #FAF6E9 !important;
+        }
+        
+        footer {
+            background-color: #4B0000 !important;
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            padding: 10px 0 !important;
+            z-index: 100 !important;
+        }
+
+        footer p {
+            color: #FAF6E9 !important;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="gallery.html" class="active">Galeri</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Galeri</h1>
+        <p>Lewis Hamilton'ın kariyerinden unutulmaz anlar</p>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="images/hamilton2.jpg" alt="Lewis Hamilton yarış arabası" onclick="openModal(this)">
+                    <p>2020 Türkiye Grand Prix'inde 7. şampiyonluğu kazandığı an</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hamilton3.jpg" alt="Lewis Hamilton podyumda" onclick="openModal(this)">
+                    <p>İlk dünya şampiyonluğu kazandığı 2008 Brezilya GP'sinde</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hamilton4.jpg" alt="Lewis Hamilton pit durağında" onclick="openModal(this)">
+                    <p>Mercedes takımıyla çalışırken</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hamilton5.jpg" alt="Lewis Hamilton 100. Yarış Zaferi" onclick="openModal(this)">
+                    <p>100. Yarış Zaferinde</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hamilton6.jpg" alt="Lewis Hamilton'un ilk yarışmaya başladığı dönemler" onclick="openModal(this)" style="object-fit: cover; object-position: center top;">
+                    <p>Lewis Hamilton'un ilk yarışmaya başladığı dönemler</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hamilton7.jpg" alt="Lewis Hamilton moda sevgisi" onclick="openModal(this)" style="object-fit: cover; object-position: center top;">
+                    <p>Lewis Hamilton'un moda sevgisi</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-container">
+            <img class="modal-content" id="modalImage">
+            <div id="modalCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lewis Hamilton Fan Sitesi. Bu site öğrenci projesi olarak hazırlanmıştır.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            closeModal();
+        };
+
+        function openModal(img) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("modalCaption");
+            
+            modal.classList.add("active");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+            
+            if (img.alt.includes("moda sevgisi") || img.alt.includes("ilk yarışmaya başladığı dönemler")) {
+                modalImg.style.objectFit = "cover";
+                modalImg.style.objectPosition = "center top";
+            } else {
+                modalImg.style.objectFit = "";
+                modalImg.style.objectPosition = "";
+            }
+            
+            captionText.innerHTML = img.parentElement.querySelector("p").innerHTML;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.classList.remove("active");
+            modal.style.display = "none";
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        document.getElementById("imageModal").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html> 
