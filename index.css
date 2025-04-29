@@ -1,0 +1,59 @@
+/* Hakkında Bölümü */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.profile-img {
+    width: 300px;
+    border-radius: 8px;
+}
+
+.text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.text p {
+    margin-bottom: 1rem;
+}
+
+/* Kariyer Bölümü */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #F5F0E1;
+    border-radius: 8px;
+    margin: 1rem;
+    min-width: 200px;
+}
+
+.number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4B0000 !important;
+}
+
+.label {
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .stat-box {
+        min-width: 100%;
+    }
+} 
